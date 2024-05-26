@@ -1,6 +1,5 @@
 package com.example.phone_number_poc.model;
 
-
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -15,10 +14,10 @@ public class User {
     @Column(nullable = false, unique = true)
     private String mobileNo;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String name;
 
-    @Column
+    @Column(nullable = true)
     private String comments;
 
     @Column(nullable = false)
@@ -42,53 +41,41 @@ public class User {
         return LocalDateTime.now().format(formatter);
     }
 
-	public Long getUserId() {
-		return userId;
-	}
+    // Getters only for createdAt and updatedAt
+    public Long getUserId() {
+        return userId;
+    }
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
+    public String getMobileNo() {
+        return mobileNo;
+    }
 
-	public String getMobileNo() {
-		return mobileNo;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setMobileNo(String mobileNo) {
-		this.mobileNo = mobileNo;
-	}
+    public String getComments() {
+        return comments;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getCreatedAt() {
+        return createdAt;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
 
-	public String getComments() {
-		return comments;
-	}
+    // Setters for other fields
+    public void setMobileNo(String mobileNo) {
+        this.mobileNo = mobileNo;
+    }
 
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(String createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public String getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(String updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-
-    // Getters and Setters
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
 }

@@ -1,6 +1,5 @@
 package com.example.phone_number_poc.service;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +19,6 @@ public class UserService {
         Optional<User> existingUser = userRepository.findByMobileNo(user.getMobileNo());
         if (existingUser.isPresent()) {
             User userToUpdate = existingUser.get();
-            userToUpdate.setUpdatedAt(user.getUpdatedAt());
             userToUpdate.setName(user.getName());
             userToUpdate.setComments(user.getComments());
             return userRepository.save(userToUpdate);
@@ -33,4 +31,3 @@ public class UserService {
         return userRepository.findAll();
     }
 }
-
