@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Pattern;
 public class UserDTO {
 
     @NotBlank(message = "Mobile number is required")
-    @Pattern(regexp = "^\\d{10}$", message = "Mobile number must be 10 digits")
+//    @Pattern(regexp = "^\\d{10}$", message = "Mobile number must be 10 digits")
     private String mobileNo;
 
     private String name;

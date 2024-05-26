@@ -78,4 +78,8 @@ public class User {
     public void setComments(String comments) {
         this.comments = comments;
     }
+
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 }
